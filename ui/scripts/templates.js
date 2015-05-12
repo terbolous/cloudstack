@@ -435,7 +435,7 @@
                                     },
 
                                     isExtractable: {
-                                        label: "extractable",
+                                        label: "label.extractable",
                                         docID: 'helpRegisterTemplateExtractable',
                                         isBoolean: true
                                     },
@@ -826,7 +826,7 @@
                                     },
 
                                     isExtractable: {
-                                        label: "extractable",
+                                        label: "label.extractable",
                                         docID: 'helpRegisterTemplateExtractable',
                                         isBoolean: true
                                     },
@@ -1910,7 +1910,7 @@
                                     },
 
                                     isExtractable: {
-                                        label: "extractable",
+                                        label: "label.extractable",
                                         docID: 'helpRegisterISOExtractable',
                                         isBoolean: true
                                     },
