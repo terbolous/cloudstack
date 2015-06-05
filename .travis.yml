@@ -30,7 +30,7 @@ env:
   matrix:
     - TESTS="smoke/test_affinity_groups smoke/test_primary_storage"
 before_install: 
-  - pip install codecov
+  - sudo pip install codecov
   - travis_wait 30 ./tools/travis/before_install.sh
 install: ./tools/travis/install.sh
 before_script: travis_wait 30 ./tools/travis/before_script.sh
