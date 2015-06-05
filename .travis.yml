@@ -38,12 +38,20 @@ env:
     - TESTS="component/test_acl_isolatednetwork_delete component/test_mm_domain_limits component/test_acl_listsnapshot"
     - TESTS="component/test_acl_listvm component/test_acl_sharednetwork_deployVM-impersonation component/test_acl_sharednetwork"
     - TESTS="component/test_snapshots component/test_acl_listvolume"
-before_install: travis_wait 30 ./tools/travis/before_install.sh
+before_install: 
+  - pip install codecov
+  - travis_wait 30 ./tools/travis/before_install.sh
 install: ./tools/travis/install.sh
 before_script: travis_wait 30 ./tools/travis/before_script.sh
 script:
   - travis_wait 30 sleep 30
   - ./tools/travis/script.sh $TESTS
-after_success: ./tools/travis/after_success.sh
-after_failure: ./tools/travis/after_failure.sh
-after_script: ./tools/travis/after_script.sh
+after_success: 
+  -  codecov
+  - ./tools/travis/after_success.sh
+after_failure: 
+  - codecov
+  - ./tools/travis/after_failure.sh
+after_script: 
+  - codecov
+  - ./tools/travis/after_script.sh
